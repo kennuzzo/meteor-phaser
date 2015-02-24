@@ -92,7 +92,7 @@ Meteor.methods({
 					user_id : options.user_id,
 				}, {
 					$set : {
-						'hp' : damage >= hurt_player.hp ? 0 : hurt_player.hp - damage
+						'hp' : damage >= hurt_player.hp ? 0 : hurt_player.hp - Math.abs(damage)
 					}
 				});
 			break;
